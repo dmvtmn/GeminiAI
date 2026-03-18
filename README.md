@@ -64,20 +64,18 @@ uv sync
 
 ### 2) Add API keys
 
-You'll need accounts with the following services. All offer free tiers or pay-as-you-go pricing:
+You'll need accounts with the following services:
 
-| Service    | Used in         | Where to get it                          |
-|------------|-----------------|------------------------------------------|
-| Anthropic  | All notebooks   | console.anthropic.com                    |
-| Serper     | Modules 2–5     | serper.dev                               |
-| VoyageAI   | Module 3 (RAG)  | dash.voyageai.com *(optional)*           |
+| Service          | Used in              | Where to get it                                  |
+|------------------|----------------------|--------------------------------------------------|
+| Google AI Studio | Modules 1, 3, 4, 5   | aistudio.google.com                              |
+| Google Cloud     | Modules 1, 4         | console.cloud.google.com *(free tier available)* |
 
-Once you have your keys, create a `.env` file in the root of the project:
+Once you have your keys, set the following environment variables (or add them to a `.env` file):
 
 ```
-ANTHROPIC_API_KEY=sk-ant-...
-SERPER_API_KEY=...
-VOYAGE_API_KEY=...  
+GEMINI_API_KEY=...
+GCP_PROJECT=your-gcp-project-id
 ```
 
 ### 3) Launch notebooks
@@ -97,12 +95,10 @@ GeminiAI/
 ├── 5. E2E Solutions.ipynb                       # Module 5: End-to-end solutions
 ├── slides/                                      # Slides
 │   └── GeminiAI.pdf
-├── data/                                        # Logos + author image assets
-├── config/                                      # YAML agent/task config (Module 5)
+├── data/                                        # Logos, author image, and sample assets
 ├── d4sci.mplstyle                               # Custom matplotlib style
 ├── pyproject.toml                               # Dependency manifest (for `uv sync`)
-├── requirements.txt                      # Alternative install path (pip/uv pip)
-└── .env                                  # API keys (create this file; do not commit)
+└── .env                                         # API keys (create this file; do not commit)
 ```
 
 ## Suggested learning path
